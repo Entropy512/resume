@@ -1,0 +1,301 @@
+% Andrew Dodd's Resume
+% Created: 12 Jan 2005
+% $Date: 2005-02-20 19:38:05 -0500 (Sun, 20 Feb 2005) $
+% $Rev: 7 $
+
+\documentclass[10pt,oneside]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{Andrew Thomas Dodd}
+\newcommand{\addra}{21 Adams Road}
+\newcommand{\addrb}{Martinsville, NJ 08836}
+\newcommand{\addr}{\addra, \addrb}
+\newcommand{\hphone}{(732) 560-7137}
+\newcommand{\phone}{(908) 770-0158}
+\newcommand{\email}{atdodd@eden.rutgers.edu}
+
+\hyphenation{Summer}
+
+\makeatletter
+\def\txtname{resume_plain}\edef\txtname{\expandafter\strip@prefix\meaning\txtname}
+\edef\fname{\jobname}
+
+\ifx\fname\txtname
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+% Stripped down version for text-only output
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\Huge\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	{\Large#1}
+	\begin{itemize}
+	\vspace{3pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-1pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}---#2; \quad \textit{#3}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+\else
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\fontfamily{phv}\selectfont\Huge\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	{\fontfamily{phv}\selectfont\Large#1}
+	\begin{itemize}
+	\vspace{3pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-1pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[2]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}---\textit{#2}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[2]{
+	\resbigitem{#1}{#2}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+\ifx\fname\txtname
+\else
+\fontfamily{ppl} \selectfont
+\fi
+
+% Name with horizontal rule
+\bigname{\name}
+
+\ifx\fname\txtname
+\else
+\vspace{-8pt} \rule{\textwidth}{1pt}
+\fi
+
+\ifx\fname\txtname
+\vspace{-1pt} {\small\itshape \addra
+
+\addrb
+
+\phone
+
+\email}
+
+\else
+\vspace{-1pt} {\small\itshape \addr \hfill \phone; \email}
+\fi
+
+\vspace{8 pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Objective}
+	\resitem{Currently seeking employment in an RF design or wireless communications field}
+	\resitem{Available as of the completion of my M.S. degree in December 2005}
+\end{ressection}
+
+\begin{ressection}{Education}
+
+	\begin{ressubsec}{Rutgers University}{Pursuing an M.S. in Electrical and Computer Engineering}
+		\ressubitem{27 credits as of May 2005 - Projected completion December 2005}
+		\ressubitem{Concentration in Digital Signal Processing and Wireless Communications}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Cornell University College of Engineering}{Bachelor of Science in Electrical Engineering}
+		\ressubitem{Graduated in May 2002: John McMullen Dean's Scholar}
+		\ressubitem{Concentration in RF Design and Wireless Communications}
+	\end{ressubsec}
+
+\end{ressection}
+
+\begin{ressection}{Work Experience}
+
+	\begin{ressubsec}{Johns Hopkins University Center for Talented Youth}{Summer 2005}
+		\ressubitem{Worked as a teaching assistant for two of CTY's courses, Data Structures and Algorithms and Fundamentals of Computer Science.  CTY is a summer program for gifted high school students run by JHU at sites throughout the country.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{IP Options, Inc.}{Summer 2004}
+		\ressubitem{Researched patent applicability evaluations for an Intellectual Property firm}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Andrew Corporation RF Power Amplifier Group}{May 2002 to Sept. 2003}
+		\ressubitem{Developed new amplifier architectures}
+	        \ressubitem{Automated UMTS linear power amplifier testing}
+		\ressubitem{Created custom test fixtures and Perl scripts to interface with test equipment via GPIB in addition to using LabView testing suites}
+		\ressubitem{Familiar with test equipment including Rohde \& Schwarz spectrum analyzers, HP signal generators, power meters, power supplies, and network analyzers}
+		\ressubitem{Demonstrated a new amplifier architecture suitable to the upcoming iBiquity IBOC digital radio broadcasting standard. The new design was 50\% more efficient than conventional designs.}
+		\ressubitem{Co-inventor of a pending amplifier architecture patent related to extremely high-efficiency linear RF amplifiers (US 2004/0027198 A1)}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Cornell University Department of Electrical and Computer Engineering}{Summer 2001}
+		\ressubitem{Assisted in the design of a digital receiver for Cornell University's CUPRI radar system using the Analog Devices AD6620 digital downconverter device and a National Instruments PCI-DIO-32HS digital I/O card}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Lucent Technologies Silicon Processing Research Group}{Summer 2000}
+		\ressubitem{Independently created a CGI front-end to a simulation tool and software to process an ion implantation simulator output. Independently initiated a port of simulation tools from older Unix variants to Linux so that extensive simulation could be done on a low end machine to meet deadlines.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Cornell University Department of Electrical and Computer Engineering}{Spring 2000 to September 2002}
+		\ressubitem{Part-time student research in Cornell University's Digital Signal Compression and Video Encoding Research (DISCOVER) lab}
+		\ressubitem{Assisted in testing of the lab's CU30 algorithm on Linux systems, and implementing MMX optimizations in some portions of the algorithm}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Cornell University Campus Store}{Summer 1999 to Spring 2000}
+		\ressubitem{Sales representative in the store's computer sales and repair department}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Lucent Technologies}{Summer 1997, Summer 1998}
+		\ressubitem{Internship in Lucent's Competitive Analysis and Reverse Engineering group.  (Business Communications Systems unit, now Avaya)}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Bridgewater-Raritan High School}{Fall 1996 to Spring 1998}
+		\ressubitem{Volunteer work as system administrator and co-webmaster of the school's Linux-based web and email servers}
+	\end{ressubsec}
+
+\end{ressection}
+
+\begin{ressection}{Skills}
+
+	\resitem{\textbf{Operating Systems:} Linux (Gentoo and Red Hat), Windows 98/2000/XP}
+
+	\begin{reslist}{Computer Languages:}
+
+		\ressubitem{Proficient in Matlab and Perl}
+
+		\ressubitem{Familiar with Python, Java, C++, and C, including embedding C code into Perl programs}
+
+	\end{reslist}
+
+	\resitem{\textbf{Foreign Languages:} German (5 years)}
+
+\end{ressection}
+
+\begin{ressection}{References}
+
+	\resitem{Dr. Joseph Lipowski - VP of Research, Andrew Corporation - \textit{(908) 546-4610}}
+
+	\resitem{Dr. Rajiv Chandrasekaran - Senior Engineer, Andrew Corporation - \textit{(908) 546-4870}}
+
+	\resitem{Dr. Toby Berger - Professor of Engineering, Cornell University - \textit{(607) 255-1447}}
+
+\end{ressection}
+
+\begin{ressection}{Interests and Activities}
+
+	\resitem{\textbf{Interests:} Amateur radio (including antenna design and construction), electronics (LED circuitry, microcontrollers, and audio circuit design), photography}
+
+	\resitem{\textbf{Extracurricular Activities - Undergraduate:} Marching Band, Pep Band, Cornell Student Linux Users Group, Secretary of the Cornell Amateur Radio Club in the 2001-2002 academic year}
+
+	\resitem{\textbf{Extracurricular Activities - Graduate:} Rutgers Student Linux Users Group, Rutgers Off Campus Students Association}
+
+\end{ressection}
+
+\begin{ressection}{Citizenship}
+
+	\resitem{United States}
+
+\end{ressection}
+
+\end{document}
+
+
+
