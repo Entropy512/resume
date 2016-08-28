@@ -6,9 +6,10 @@
 \documentclass[10pt,oneside]{article}
 \usepackage{geometry}
 \usepackage[T1]{fontenc}
+\usepackage{enumitem}
 
 \pagestyle{empty}
-\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+\geometry{letterpaper,tmargin=0.5in,bmargin=0.5in,lmargin=0.5in,rmargin=0.5in,headheight=0in,headsep=0in,footskip=.3in}
 
 \setlength{\parindent}{0in}
 \setlength{\parskip}{0in}
@@ -104,7 +105,7 @@
 \newenvironment{ressection}[1]{
 	\vspace{4pt}
 	{\fontfamily{phv}\selectfont\Large#1}
-	\begin{itemize}
+	\begin{itemize}[leftmargin=12pt]
 	\vspace{3pt}
 }{
 	\end{itemize}
@@ -136,7 +137,7 @@
 \newenvironment{ressubsec}[2]{
 	\resbigitem{#1}{#2}
 	\vspace{-2pt}
-	\begin{itemize}
+	\begin{itemize}[leftmargin=12pt]
 }{
 	\end{itemize}
 }
@@ -145,7 +146,7 @@
 \newenvironment{reslist}[1]{
 	\resitem{\textbf{#1}}
 	\vspace{-5pt}
-	\begin{itemize}
+	\begin{itemize}[leftmargin=12pt]
 }{
 	\end{itemize}
 }
@@ -254,7 +255,7 @@
 
 	\resitem{\textbf{Operating Systems:} Linux (Ubuntu, embedded custom distributions, Android), Windows 98/2000/XP/7, VxWorks 5.x/6.x}
 
-	\begin{reslist}{Computer Languages:}
+	\begin{reslist}{\textbf{Computer Languages:}}
 	  \ressubitem{Proficient in Matlab, C, Python, and Perl, including embedding C into Perl}
           \ressubitem{Proficient at using git for source code management and Gerrit for source change review}
 	  \ressubitem{Familiar with Java, Node.js and C++}
@@ -269,14 +270,12 @@
 \end{ressection}
 
 \begin{ressection}{Interests and Activities}
-	\begin{reslist}{Interests}
-		\ressubitem{Amateur radio (including antenna design and construction)}
-		\ressubitem{Electronics design (LED circuitry, microcontrollers, and audio circuit design)}
-		\ressubitem{Photography and videography, including creating an HDMI livestreaming system using a Raspberry Pi}
-	        \ressubitem{Android platform maintenance and bringup.  Worked with a global team of volunteers across multiple timezones to bring new versions of Android to cell phones not supported by the manufacturer.  The project involved a great deal of reverse engineering of undocumented interface changes made by vendors to low-level interfaces that supported audio, camera, display hardware and sensors for touch, position and acceleration.  Coordinated bringup for four years of Android releases across a variety of phones from multiple manufacturers.}
-                \ressubitem{Currently reverse engineering Sony E-mount lens control protocols for the purposes of adapting other lenses to the camera or adding autofocus to manual lenses, using a logic analyzer and Python data analysis tools}
-		\ressubitem{Executive board member of Southern Tier Young Professionals from 2010 to 2014}
-	\end{reslist}
+		\resitem{Amateur radio (including antenna design and construction)}
+		\resitem{Electronics design (LED circuitry, microcontrollers, and audio circuit design)}
+		\resitem{Photography and videography, including creating an HDMI livestreaming system using a Raspberry Pi}
+	        \resitem{Android platform maintenance and bringup.  Worked with a global team of volunteers across multiple timezones to bring new versions of Android to cell phones not supported by the manufacturer.  The project involved a great deal of reverse engineering of undocumented interface changes made by vendors to low-level interfaces that supported audio, camera, display hardware and sensors for touch, position and acceleration.  Coordinated bringup for four years of Android releases across a variety of phones from multiple manufacturers.}
+                \resitem{Currently reverse engineering Sony E-mount lens control protocols for the purposes of adapting other lenses to the camera or adding autofocus to manual lenses, using a logic analyzer and Python data analysis tools}
+		\resitem{Executive board member of Southern Tier Young Professionals from 2010 to 2014}
 \end{ressection}
 
 \begin{ressection}{Citizenship and Security Clearance}
